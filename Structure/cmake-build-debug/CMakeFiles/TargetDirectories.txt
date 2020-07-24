@@ -1,3 +1,0 @@
-E:/DataStructures using C++/Structure/cmake-build-debug/CMakeFiles/Structure.dir
-E:/DataStructures using C++/Structure/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/DataStructures using C++/Structure/cmake-build-debug/CMakeFiles/rebuild_cache.dir
