@@ -1,0 +1,25 @@
+#include <iostream>
+#include <stack>
+#include <cstring>
+
+void reverseString(char *s, int length);
+
+//reverse using stack
+int main() {
+    char s[100];
+    printf("Enter a line: ");
+    gets(s);
+    reverseString(s, strlen(s));
+    printf("Output: %s",s);
+}
+
+void reverseString(char *s, int length) {
+    std::stack<char> stack;
+    for (int i = 0; i < length; i++) {
+        stack.push(s[i]);
+    }
+    for (int i = 0; i < length; i++) {
+        s[i] = stack.top();
+        stack.pop();
+    }
+}

@@ -1,0 +1,70 @@
+#include <iostream>
+
+//stack - LIFO (last in first out)
+
+struct Node {
+    int data;
+    Node *link;
+};
+Node *top = NULL;
+
+void push(int i);
+
+int pop();
+
+bool isEmpty();
+
+void printStack();
+
+int main() {
+    push(3);
+    printStack();
+    push(1);
+    printStack();
+    push(2);
+    printStack();
+    push(6);
+    printStack();
+    push(5);
+    printStack();
+    push(4);
+    printStack();
+    pop();
+    printStack();
+
+
+    return 0;
+}
+
+void printStack() {
+    Node *node = top;
+    printf("stack: ");
+    while (node != NULL) {
+        printf("%d ", node->data);
+        node = node->link;
+    }
+    printf("\n");
+}
+
+bool isEmpty() {
+    return top == NULL;
+}
+
+int pop() {
+    if (top == NULL) {
+        printf("empty stack");
+        return -1;
+    }
+    Node *node = top;
+    top = top->link;
+    int i = node->data;
+    free(node);
+    return i;
+}
+
+void push(int i) {
+    Node *node = new Node();
+    node->data = i;
+    node->link = top;
+    top = node;
+}
